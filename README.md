@@ -5,9 +5,14 @@ InternBoard is a full-stack MERN application for managing interns during a fundr
 ---
 
 ## 📸 Demo
-
-![InternBoard Dashboard Screenshot](./screenshots/dashboard.png)
-
+# Dashboard
+<img width="1894" height="868" alt="Screenshot 2025-08-02 110313" src="https://github.com/user-attachments/assets/a1101f8d-14a2-426d-902b-a767e794dcd9" />
+# Leaderboard
+<img width="1912" height="811" alt="Screenshot 2025-08-02 110337" src="https://github.com/user-attachments/assets/c6a0aece-2494-447c-9fdf-b6c7c694292e" />
+# Login Page
+<img width="1915" height="870" alt="Screenshot 2025-08-02 110358" src="https://github.com/user-attachments/assets/0392da36-0ed2-4307-bc32-9e8aa1cc9c2d" />
+# SignUp Page
+<img width="1916" height="870" alt="Screenshot 2025-08-02 110409" src="https://github.com/user-attachments/assets/6ed7af1d-0583-4309-8489-1feba82b3fd4" />
 
 ---
 
