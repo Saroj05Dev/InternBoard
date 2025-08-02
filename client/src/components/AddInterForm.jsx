@@ -18,7 +18,7 @@ function AddInterForm({ onSuccess }) {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/interns", formData);
+      await axios.post("https://internboard.onrender.com/api/interns", formData);
       toast.success("Intern Added Successfully!");
       setFormData({ name: "", college: "", year: "", email: "", donations: 0 });
       onSuccess();

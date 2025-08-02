@@ -12,7 +12,7 @@ function Dashboard() {
 
   async function fetchInterns() {
     try {
-      const res = await axios.get("http://localhost:5000/api/interns");
+      const res = await axios.get("https://internboard.onrender.com/api/interns");
       setInterns(res.data);
     } catch (error) {
       console.error("Failed to fetch interns", error);

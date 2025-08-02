@@ -19,7 +19,7 @@ function EditInternModal({ intern, onClose, onSuccess }) {
     e.preventDefault();
     try {
       await axios.patch(
-        `http://localhost:5000/api/interns/${intern._id}`,
+        `https://internboard.onrender.com/api/interns/${intern._id}`,
         formData
       );
       toast.success("Intern updated successfully!");
