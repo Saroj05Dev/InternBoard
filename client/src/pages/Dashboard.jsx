@@ -9,13 +9,19 @@ function Dashboard() {
   const [interns, setInterns] = useState([]);
   const [search, setSearch] = useState("");
   const [selectIntern, setSelectIntern] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   async function fetchInterns() {
     try {
-      const res = await axios.get("https://internboard.onrender.com/api/interns");
+      setLoading(true);
+      const res = await axios.get(
+        "https://internboard.onrender.com/api/interns"
+      );
       setInterns(res.data);
     } catch (error) {
       console.error("Failed to fetch interns", error);
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -47,7 +53,11 @@ function Dashboard() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredInterns.length > 0 ? (
+          {loading ? (
+            <div className="flex justify-center items-center col-span-full py-10">
+              <div className="animate-spin rounded-full h-10 w-10 border-t-4 border-indigo-600 border-solid"></div>
+            </div>
+          ) : filteredInterns.length > 0 ? (
             filteredInterns.map((intern) => (
               <InternCard
                 key={intern._id}
