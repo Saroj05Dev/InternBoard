@@ -29,3 +29,15 @@ exports.updateIntern = async (req, res) => {
     res.status(400).json({ error: "Update failed" });
   }
 };
+
+exports.deleteIntern = async (req, res) => {
+  try {
+    const deletedIntern = await Intern.findByIdAndDelete(req.params.id)
+    if (!deletedIntern) {
+      return res.status(404).json({ error: "Intern not found" });
+    }
+    res.json(deletedIntern);
+  } catch (err) {
+    res.status(400).json({ error: "Deletion failed" });
+  }
+};
