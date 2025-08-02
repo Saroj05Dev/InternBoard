@@ -1,7 +1,7 @@
 import React from "react";
 import { GiftIcon, BadgePercentIcon, PencilLineIcon } from "lucide-react";
 
-function InternCard({ intern, onEdit }) {
+function InternCard({ intern, onEdit, onDelete }) {
   const referralCode = intern.name.toLowerCase().replace(/\s+/g, "") + "2025";
 
   return (
@@ -43,6 +43,12 @@ function InternCard({ intern, onEdit }) {
           className="inline-flex items-center gap-1 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-1.5 rounded-md text-sm transition"
         >
           <PencilLineIcon size={16} /> Edit
+        </button>
+        <button
+          onClick={onDelete}
+          className="inline-flex items-center gap-1 bg-red-600 hover:bg-red-700 text-white px-4 py-1.5 rounded-md text-sm transition"
+        >
+          <Trash2Icon size={16} /> Delete
         </button>
       </div>
     </div>

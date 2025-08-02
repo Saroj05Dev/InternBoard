@@ -4,6 +4,7 @@ import InternCard from "../components/InternCard";
 import axios from "axios";
 import AddInterForm from "../components/AddInterForm";
 import EditInternModal from "../components/EditInternModal";
+import toast from "react-hot-toast";
 
 function Dashboard() {
   const [interns, setInterns] = useState([]);
@@ -22,6 +23,22 @@ function Dashboard() {
       console.error("Failed to fetch interns", error);
     } finally {
       setLoading(false);
+    }
+  }
+
+  async function handleDelete(id) {
+    const confirm = window.confirm(
+      "Are you sure you want to delete this intern?"
+    );
+    if (!confirm) return;
+
+    try {
+      await axios.delete(`https://internboard.onrender.com/api/interns/${id}`);
+      toast.success("Intern deleted successfully!");
+      fetchInterns();
+    } catch (err) {
+      console.error("Delete failed:", err);
+      toast.error("Failed to delete intern.");
     }
   }
 
@@ -63,6 +80,7 @@ function Dashboard() {
                 key={intern._id}
                 intern={intern}
                 onEdit={() => setSelectIntern(intern)}
+                onDelete={() => handleDelete(intern._id)}
               />
             ))
           ) : (
