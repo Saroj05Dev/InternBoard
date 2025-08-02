@@ -1,5 +1,5 @@
 import React from "react";
-import { GiftIcon, BadgePercentIcon, PencilLineIcon } from "lucide-react";
+import { GiftIcon, BadgePercentIcon, PencilLineIcon, Trash2Icon } from "lucide-react";
 
 function InternCard({ intern, onEdit, onDelete }) {
   const referralCode = intern.name.toLowerCase().replace(/\s+/g, "") + "2025";
